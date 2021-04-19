@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        height: 100vh;
+      }
+
+      .container {
+        width: 80%;
+        height: auto;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        resize:both;
+      }
+
+      .regular {
+        display: block;
+        background-color: blue;
+        margin: 2rem 4rem;
+        width: 200px;
+        height: 30px;
+        border: none;
+        border-radius: 0.25rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+      }
+
+      .default {
+        transform: scale(var(--scale, 1.2)) rotate(var(--rotation, 10deg));
+        /* transform:scale(1.2) rotate(10deg) */ 
+        background-color: orange;             
+      }
+
+      .big {
+        /* transform: scale(2) rotate(10deg); */
+        --scale: 2;
+        background-color: red;
+      }
+
+      .tilted {
+        /* transform: scale(1.2) rotate(-10deg); */
+        --rotation: -10deg;
+        background-color: yellow;
+        color: blue;
+      }
+
+      .big.tilted {
+        /* transform: scale(2) rotate(-10deg); */
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Transform:Scale & Rotation!</h2>
+      <div class="regular">Scale:0; Rotation:0deg</div>
+      <div class="regular default">Scale:1.2; Rotation: 10deg</div>
+      <div class="regular default big">Scale:2; Rotation:10deg</div>
+      <div class="regular default tilted">Scale:1.2; Rotation:-10deg</div>
+      <div class="regular default big tilted">Scale:2; Rotation:-10deg</div>
+    </div>
+  </body>
+</html>

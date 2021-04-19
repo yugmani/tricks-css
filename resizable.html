@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resizable Element</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150vh;
+    }
+
+    .container {
+      width: 80%;
+      height: auto;
+      background-color: whitesmoke;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      /* resize: both;
+        border: 1px solid lightgray; */
+    }
+
+    .row {
+      min-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .row.last {
+      justify-content: center;
+    }
+
+    .resize {
+      width: 200px;
+      height: 200px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid gray;
+      margin-bottom: 15px;
+    }
+
+    .horizontal {
+      resize: horizontal;
+      background-color: red;
+      overflow: hidden;
+    }
+
+    .vertical {
+      resize: vertical;
+      overflow: hidden;
+      background-color: yellow;
+      color: blue;
+    }
+
+    .both-resize {
+      resize: both;
+      overflow: hidden;
+      background-color: blue;
+    }
+
+    .limited-width {
+      resize: horizontal;
+      overflow: hidden;
+      min-width: 100px;
+      max-width: 350px;
+      background-color: green;
+    }
+
+    .limited-height {
+      resize: vertical;
+      overflow: hidden;
+      min-height: 100px;
+      max-height: 400px;
+      background-color: pink;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Have a fun by resizing!</h1>
+    <div class="row">
+      <div class="resize horizontal">
+        <h3>Resize Horizaontal Only<h3>
+      </div>
+      <div class="resize vertical">
+        <h3>Resize Vertical Only</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="resize limited-height">
+        <h3>Limited Height</h3>
+        <p>Min-height:100px</p>
+        <p>Max-height:500px</p>
+      </div>
+      <div class="resize limited-width">
+        <h3>Limited Width</h3>
+        <p>Min-width:100px</p>
+        <p>Max-width:300px</p>
+      </div>
+    </div>
+    <div class="row last">
+      <div class="resize both-resize">
+        <h3>Resize Both</h3>
+        <p>Horizontal & Vertical</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
